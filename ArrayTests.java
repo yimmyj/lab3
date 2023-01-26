@@ -27,4 +27,22 @@ public class ArrayTests {
     int[] input1 = {1,2,3};
     assertArrayEquals(new int[]{3,2,1}, ArrayExamples.reversed(input1));
   }
+
+  @Test
+  public void testAverageOneElement() {
+    double[] input1 = {100};
+    assertEquals(0, ArrayExamples.averageWithoutLowest(input1), 0.01);
+  }
+
+  @Test
+  public void testAverageZeroElements() {
+    double[] input1 = {};
+    assertEquals(0, ArrayExamples.averageWithoutLowest(input1), 0.01);
+  }
+
+  @Test
+  public void testAverageRepeatedLowest() {
+    double[] input1 = {10, 10, 10, 11, 12, 58};
+    assertEquals(27, ArrayExamples.averageWithoutLowest(input1), 0.01);
+  }
 }
